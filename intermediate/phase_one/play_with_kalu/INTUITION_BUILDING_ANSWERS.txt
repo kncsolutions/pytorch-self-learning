@@ -1,0 +1,462 @@
+
+INTUITION_BUILDING_ANSWERS.txt
+
+============================================================
+PLAY WITH KALU — INTUITION BUILDING ANSWERS
+============================================================
+
+These answers are intentionally conceptual.
+
+The goal is not rigid memorization.
+
+The goal is to develop intuition about:
+
+    tensors
+    geometry
+    representation learning
+    deep learning systems
+
+
+============================================================
+IMAGE TENSOR INTUITION
+============================================================
+
+1. Why does PyTorch store images as:
+
+        [Channels, Height, Width]
+
+   instead of:
+
+        [Height, Width, Channels]
+
+ANSWER:
+
+PyTorch is optimized for tensor computation and convolution
+operations.
+
+Channel-first representation:
+
+    [C, H, W]
+
+improves computational efficiency and memory access patterns
+for deep learning operations.
+
+
+------------------------------------------------------------
+
+2. If an image tensor has shape:
+
+        torch.Size([3, 224, 224])
+
+   what does each dimension represent?
+
+ANSWER:
+
+    3     -> RGB channels
+    224   -> image height
+    224   -> image width
+
+The tensor represents three stacked information fields.
+
+
+------------------------------------------------------------
+
+3. Why are RGB channels separated into different tensor planes?
+
+ANSWER:
+
+Each channel carries different intensity information.
+
+Separating channels allows neural systems to independently
+analyze:
+
+- color distributions
+- gradients
+- textures
+- spatial structures
+
+The network learns interactions between these channels.
+
+
+------------------------------------------------------------
+
+4. If a grayscale image is used instead of RGB:
+
+   - how would tensor shape change?
+   - how would memory usage change?
+
+ANSWER:
+
+RGB image:
+
+    [3, H, W]
+
+Grayscale image:
+
+    [1, H, W]
+
+Memory usage decreases because only one information channel
+is stored instead of three.
+
+
+============================================================
+TENSOR GEOMETRY INTUITION
+============================================================
+
+5. Why does resizing become necessary before batching?
+
+ANSWER:
+
+Batching requires geometrically consistent tensors.
+
+All tensors inside a batch must have compatible dimensions.
+
+Without resizing:
+
+    stacking tensors becomes impossible.
+
+
+------------------------------------------------------------
+
+6. What problems occur if different image sizes exist
+   inside the same batch?
+
+ANSWER:
+
+PyTorch cannot directly stack tensors with incompatible
+dimensions.
+
+Example:
+
+    [3, 224, 224]
+    [3, 128, 128]
+
+cannot form a valid batch tensor.
+
+
+------------------------------------------------------------
+
+7. Why does adding a batch dimension transform:
+
+        [3, 224, 224]
+
+   into:
+
+        [1, 3, 224, 224]
+
+ANSWER:
+
+The new leading dimension represents the number of samples.
+
+Example:
+
+    1 image
+    3 channels
+    224 height
+    224 width
+
+Neural systems process tensor populations rather than
+isolated tensors.
+
+
+------------------------------------------------------------
+
+8. Why is batching computationally more efficient than
+   processing one image at a time?
+
+ANSWER:
+
+Batching enables:
+
+- parallel computation
+- GPU utilization
+- vectorized tensor operations
+- more stable gradient estimation
+
+Modern hardware is optimized for large tensor operations.
+
+
+============================================================
+CONVOLUTION INTUITION
+============================================================
+
+9. What does a convolution filter actually observe?
+
+ANSWER:
+
+A convolution filter observes local spatial regions.
+
+It learns patterns such as:
+
+- edges
+- gradients
+- textures
+- contrast transitions
+
+It does not initially understand semantic concepts.
+
+
+------------------------------------------------------------
+
+10. Why do early CNN layers usually learn:
+
+    - edges
+    - gradients
+    - textures
+
+    instead of semantic concepts like:
+
+    - dog
+    - cat
+    - face
+
+ANSWER:
+
+Semantic understanding emerges hierarchically.
+
+Early layers learn simple reusable structures.
+
+Deeper layers combine these simple patterns into more
+complex representations.
+
+
+------------------------------------------------------------
+
+11. If a convolution kernel becomes larger:
+
+    - what changes spatially?
+    - what changes computationally?
+
+ANSWER:
+
+Spatially:
+
+    the filter observes a larger region.
+
+Computationally:
+
+    more parameters
+    higher computation cost
+    increased memory usage
+
+
+------------------------------------------------------------
+
+12. Why can feature maps be interpreted as learned
+    spatial responses?
+
+ANSWER:
+
+Feature maps show where filters activate strongly.
+
+High activation regions indicate that the learned filter
+detected a matching spatial pattern.
+
+
+============================================================
+REPRESENTATION LEARNING INTUITION
+============================================================
+
+13. Why are logits not probabilities?
+
+ANSWER:
+
+Logits are raw numerical scores.
+
+They are unconstrained and do not necessarily sum to 1.
+
+Softmax later converts them into probability distributions.
+
+
+------------------------------------------------------------
+
+14. Why do we apply softmax after logits?
+
+ANSWER:
+
+Softmax transforms raw scores into normalized probabilities.
+
+Properties:
+
+- values between 0 and 1
+- probabilities sum to 1
+
+This enables interpretable class confidence estimation.
+
+
+------------------------------------------------------------
+
+15. What does the classifier actually learn internally?
+
+    Does it learn:
+
+        "dogness"
+
+    or:
+
+        statistical feature structure
+
+ANSWER:
+
+The network learns statistical feature structures.
+
+Semantic categories emerge indirectly from repeated spatial
+and statistical patterns inside data.
+
+
+------------------------------------------------------------
+
+16. Why can two different dog breeds still produce
+    similar representations?
+
+ANSWER:
+
+Different breeds may share:
+
+- fur textures
+- facial structures
+- ear patterns
+- body geometry
+
+The network learns similarity relationships in latent space.
+
+
+============================================================
+EVALUATION INTUITION
+============================================================
+
+17. Why is high training accuracy alone not sufficient?
+
+ANSWER:
+
+A network may memorize training samples without learning
+generalizable representations.
+
+High training accuracy does not guarantee performance on
+unseen data.
+
+
+------------------------------------------------------------
+
+18. What is the difference between:
+
+        memorization
+
+    and:
+
+        generalization
+
+ANSWER:
+
+Memorization:
+
+    remembering specific training examples
+
+Generalization:
+
+    learning reusable underlying patterns that transfer
+    to unseen samples
+
+
+------------------------------------------------------------
+
+19. Why is evaluation performed using:
+
+        torch.no_grad()
+
+ANSWER:
+
+Gradients are unnecessary during inference.
+
+Disabling gradients:
+
+- reduces memory usage
+- improves computational efficiency
+- speeds up evaluation
+
+
+------------------------------------------------------------
+
+20. What kinds of visual patterns might confuse
+    the classifier?
+
+ANSWER:
+
+Examples:
+
+- unusual lighting
+- occlusion
+- low-quality images
+- overlapping visual features
+- rare poses
+- background similarity
+
+Representation overlap may produce ambiguity.
+
+
+============================================================
+FINAL REFLECTION
+============================================================
+
+21. At what stage does numerical tensor processing
+    begin to resemble perception?
+
+ANSWER:
+
+There is no single exact boundary.
+
+Perception gradually emerges through layered representation
+transformations and hierarchical feature learning.
+
+
+------------------------------------------------------------
+
+22. Is a neural network actually "seeing" an image,
+    or is it performing statistical tensor transformations?
+
+ANSWER:
+
+Technically it performs statistical tensor transformations.
+
+However, sufficiently rich representations can produce
+behavior that resembles perception.
+
+
+------------------------------------------------------------
+
+23. How do tensor operations gradually evolve into
+    semantic representations?
+
+ANSWER:
+
+Repeated tensor transformations compress statistical
+patterns into latent representations.
+
+Higher-level semantic structure gradually emerges from
+these transformations.
+
+
+------------------------------------------------------------
+
+24. Why can latent representations emerge from purely
+    numerical optimization?
+
+ANSWER:
+
+Optimization forces the network to organize information
+into useful internal structures that improve prediction.
+
+Semantic geometry emerges as a consequence of learning
+efficient representations.
+
+
+============================================================
+FINAL THOUGHT
+============================================================
+
+Deep learning systems are fundamentally:
+
+    tensor transformation systems
+
+Modern AI emerges from layered numerical representation
+learning over multidimensional tensor geometry.

@@ -1,0 +1,18 @@
+
+# Core Deep Learning Framework
+torch
+torchvision
+
+# Image Processing
+Pillow
+
+# Notebook Support
+jupyter
+ipykernel
+
+# Scientific Computing
+numpy
+
+# Visualization
+matplotlib
+```

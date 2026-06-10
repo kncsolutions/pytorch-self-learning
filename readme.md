@@ -428,13 +428,391 @@ pytorch-self-learning/
 ```
 
 ---
+# Intermediate Phase — Tensor Interaction Systems
+
+## Overview
+
+After learning how tensors represent images and perception systems in:
+
+```text id="g3l9dn"
+play_with_kalu
+```
+
+the repository now transitions into a deeper layer of tensor understanding:
+
+```text id="0n8o3d"
+Tensor Interaction Systems
+```
+
+This phase focuses on how tensors:
+
+* align
+* negotiate dimensions
+* route information
+* reorganize geometry
+* control visibility
+* interact structurally
+
+The goal is to move beyond:
+
+```text id="e73z1f"
+Tensor as container
+```
+
+toward:
+
+```text id="7yk4yl"
+Tensor as computational geometry system
+```
+
+---
+
+# Core Philosophy
+
+This phase repeatedly emphasizes:
+
+```text id="8l3zci"
+Tensor dimensions are not merely sizes.
+
+They carry structural meaning.
+```
+
+Understanding tensor interaction systems is foundational for:
+
+* CNNs
+* transformers
+* attention systems
+* latent representations
+* multimodal systems
+* scientific computing
+
+---
+
+# Directory Structure
+
+```text id="2afq4j"
+intermediate/
+
+└── phase_02_tensor_interaction_systems/
+
+    ├── step_01_tensor_broadcasting.py
+    ├── step_02_broadcasting_geometry.py
+    ├── step_03_tensor_indexing.py
+    ├── step_04_boolean_masking.py
+    ├── step_05_gather_scatter.py
+    ├── step_06_tensor_memory_layout.py
+    ├── step_07_tensor_permutation_systems.py
+    └── step_08_tensor_alignment_systems.py
+```
+
+---
+
+# Learning Progression
+
+This phase follows the progression:
+
+```text id="8g1ud0"
+Broadcasting
+    ↓
+Tensor Navigation
+    ↓
+Information Visibility
+    ↓
+Tensor Routing
+    ↓
+Memory Geometry
+    ↓
+Dimension Reorganization
+    ↓
+Representation Alignment
+```
+
+---
+
+# Step-by-Step Learning Path
+
+---
+
+## Step 01 — Tensor Broadcasting
+
+Core intuition:
+
+```text id="jjlwm8"
+Dimensions negotiate compatibility.
+```
+
+Topics:
+
+* singleton dimensions
+* implicit expansion
+* broadcasting rules
+* shape compatibility
+* tensor interaction
+
+Key insight:
+
+```text id="ddlf6w"
+Broadcasting is structured geometric alignment.
+```
+
+---
+
+## Step 02 — Broadcasting Geometry
+
+Core intuition:
+
+```text id="l6e6o4"
+Broadcasting is tensor geometry negotiation.
+```
+
+Topics:
+
+* right-to-left alignment
+* dimensional compatibility
+* higher-dimensional broadcasting
+* geometric expansion
+* structural interaction
+
+Key insight:
+
+```text id="mjdb55"
+Tensor interaction depends on geometric compatibility.
+```
+
+---
+
+## Step 03 — Tensor Indexing
+
+Core intuition:
+
+```text id="uh54te"
+Indexing is tensor navigation.
+```
+
+Topics:
+
+* tensor slicing
+* dimensional traversal
+* advanced indexing
+* boolean indexing
+* higher-dimensional indexing
+
+Key insight:
+
+```text id="y4br9n"
+Tensor indexing enables structured information access.
+```
+
+---
+
+## Step 04 — Boolean Masking
+
+Core intuition:
+
+```text id="a0zjlwm"
+Masks control information flow.
+```
+
+Topics:
+
+* boolean tensors
+* logical masking
+* conditional selection
+* masked computation
+* sparse visibility
+
+Key insight:
+
+```text id="5rjlwm"
+Masking enables selective tensor visibility.
+```
+
+---
+
+## Step 05 — Gather and Scatter
+
+Core intuition:
+
+```text id="zjlwm8"
+Tensors can dynamically route information.
+```
+
+Topics:
+
+* gather()
+* scatter()
+* tensor routing
+* sparse interaction
+* dynamic indexing
+
+Key insight:
+
+```text id="jqjlwm"
+Tensor systems can selectively redistribute information.
+```
+
+---
+
+## Step 06 — Tensor Memory Layout
+
+Core intuition:
+
+```text id="jlwmu5"
+Tensor geometry affects memory behavior.
+```
+
+Topics:
+
+* contiguous tensors
+* tensor storage
+* memory layout
+* tensor stride
+* reshape vs view
+
+Key insight:
+
+```text id="jlwmu6"
+A tensor is simultaneously geometry and memory.
+```
+
+---
+
+## Step 07 — Tensor Permutation Systems
+
+Core intuition:
+
+```text id="jlwmu7"
+Dimension order changes tensor meaning.
+```
+
+Topics:
+
+* permute()
+* transpose()
+* dimension reordering
+* semantic structure
+* tensor reinterpretation
+
+Key insight:
+
+```text id="jlwmu8"
+Tensor dimensions encode semantic structure.
+```
+
+---
+
+## Step 08 — Tensor Alignment Systems
+
+Core intuition:
+
+```text id="jlwmu9"
+Deep learning is structured tensor interaction.
+```
+
+Topics:
+
+* tensor alignment
+* representation compatibility
+* interaction geometry
+* embedding alignment
+* attention alignment
+
+Key insight:
+
+```text id="jlwmua"
+Tensor systems interact through structural negotiation.
+```
+
+---
+
+# Important Conceptual Shift
+
+Phase 1 taught:
+
+```text id="jlwmub"
+How tensors represent perception.
+```
+
+Phase 2 teaches:
+
+```text id="jlwmuc"
+How tensors structurally interact.
+```
+
+This transition is extremely important because modern AI systems fundamentally depend on:
+
+* tensor alignment
+* tensor routing
+* dimension organization
+* latent interaction systems
+
+---
+
+# Why This Phase Matters
+
+Most tutorials stop at:
+
+* tensor creation
+* tensor arithmetic
+* basic neural networks
+
+This repository intentionally explores:
+
+```text id="jlwmud"
+The computational geometry of tensor systems.
+```
+
+These ideas form the foundation for understanding:
+
+* transformers
+* attention
+* embeddings
+* multimodal systems
+* latent spaces
+* representation learning
+
+---
+
+# Important Deep Learning Connection
+
+Nearly every modern AI architecture depends heavily on:
+
+* broadcasting
+* masking
+* permutation
+* alignment
+* tensor routing
+
+Understanding these deeply transforms how one understands AI systems.
+
+---
+
+# Final Conceptual Summary
+
+This phase gradually reveals that deep learning systems are fundamentally:
+
+```text id="jlwmue"
+large-scale tensor interaction systems
+```
+
+where dimensions carry:
+
+* structure
+* semantics
+* geometry
+* interaction meaning
+
+rather than merely:
+
+```text id="jlwmuf"
+numerical storage.
+```
+
 
 # Future Topics
 
 Planned future sections include:
 
-* broadcasting
-* advanced indexing
 * convolution operations
 * neural networks
 * CNNs
@@ -629,13 +1007,13 @@ python solutions/tensor_basic_task_easy_solution.py
 
 Intermediate tensor systems demonstrations are available in:
 
-```text id="h19"
+```text 
 problems/intermediate/
 ```
 
 Example:
 
-```bash id="h20"
+```
 python problems/intermediate/tensor_basic_demonstration_advanced.py
 ```
 
@@ -709,18 +1087,35 @@ Current project structure is compatible with:
 * Linux terminal workflows
 
 ---
+````markdown id="wqlycg"
+## Installation
+
+### CPU Installation
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+````
+
+### Install Additional Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+```
+```
 
 # Verify Installation
 
 Run:
 
-```bash id="h23"
+```
 python
 ```
 
 Then:
 
-```python id="h24"
+```
 import torch
 
 print(torch.__version__)
